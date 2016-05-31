@@ -20,4 +20,9 @@ public class MapGeneratorEditor : Editor {
             mapgen.generateMap();
         }
     }
+    public void Start()
+    {
+        MapGenerator mapgen = (MapGenerator)target;
+        mapgen.generateMap();
+    }
 }
