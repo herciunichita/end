@@ -12,7 +12,7 @@ public class MapGeneratorEditor : Editor {
         {
             if (mapgen.autoUpdate)
             {
-                mapgen.generateMap();
+                //mapgen.generateMap();
             }
         }
         if (GUILayout.Button("Generate!"))

@@ -23,7 +23,7 @@ public class MapDisplay : MonoBehaviour {
         meshRenderer.sharedMaterial.mainTexture = texture;
         meshCollider.sharedMesh = meshFilter.sharedMesh;
         meshCollider.enabled = true;
-        gameObject.AddComponent<MeshCollider>();
+        //gameObject.AddComponent<MeshCollider>();
     }
 	
 }
