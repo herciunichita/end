@@ -84,8 +84,10 @@ public static class PerlinNoise
     public static float[,] GenerateNoiseMap(int mapWidth, int mapHeight, float scale)
     {
         System.Random prng = new System.Random();
-        float xx = prng.Next(-1000, 1000);
-        float yy = prng.Next(-1000, 1000);
+        float xx1 = prng.Next(-1000, 1000);
+        float yy1 = prng.Next(-1000, 1000);
+        float xx2 = prng.Next(-100, 100);
+        float yy2 = prng.Next(-100, 100);
 
         float[,] noiseMap = new float[mapWidth, mapHeight];
 
@@ -98,8 +100,10 @@ public static class PerlinNoise
         {
             for (int x = 0; x < mapWidth; x++)
             {
-                float sampleX = x / scale + xx ;
-                float sampleY = y / scale + yy ;
+                //xx2 = prng.Next(-100, 100);
+                //yy2 = prng.Next(-100, 100);
+                float sampleX = x / scale + xx1 + xx2 ;
+                float sampleY = y / scale + yy1 + yy2 ;
 
                 float perlinValue = Mathf.PerlinNoise(sampleX, sampleY);
                 noiseMap[x, y] = perlinValue;
