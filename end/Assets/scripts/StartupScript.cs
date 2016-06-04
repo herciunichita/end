@@ -26,7 +26,9 @@ public class StartupScript : MonoBehaviour {
         
         if (timer == 0)
         {
-            GUI.Box(new Rect(10, 10, 300, 30), "Congratulations, you have survived the end.");
+            GUI.Box(new Rect(10, 10, Screen.width, Screen.height), "Congratulations, you have survived the end.");
+            Time.timeScale = 0;
+            //GetComponent<GUITexture>().color = Color.Lerp(GetComponent<GUITexture>().color, Color.white, 1.5f * Time.deltaTime);
         }
         else
         {

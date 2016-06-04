@@ -7,10 +7,11 @@ public class BasicFollowerAI : MonoBehaviour {
     public float speed = 7;
     public float hover = 0.7f;
     private float actualspeed;
+    private bool lost;
 
 	// Use this for initialization
 	void Start () {
-        
+        lost = false;
 	}
 	
 	// Update is called once per frame
@@ -52,6 +53,19 @@ public class BasicFollowerAI : MonoBehaviour {
             transform.Translate(Vector3.forward * actualspeed * Time.deltaTime);
             transform.Translate(Vector3.up * hover * Time.deltaTime);
         }
-
-	}
+        if (Vector3.Distance(follower.position, target.position) < 5)
+        {
+            lost = true;
+        }
+    }
+    void OnGUI()
+    {
+        if (lost)
+        {
+            GUI.Box(new Rect(10, 10, Screen.width, Screen.height), "You finally came to an END.");
+            Time.timeScale = 0;
+            //GetComponent<GUITexture>().color= Color.Lerp(GetComponent<GUITexture>().color, Color.black, 1.5f * Time.deltaTime);
+            //GUI.color = Color.black;
+        }
+    }
 }
