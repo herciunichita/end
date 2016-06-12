@@ -14,17 +14,13 @@ public class MapGenerator : MonoBehaviour {
 
     public TerrainType[] regions;
 
-    //public int octaves;
     [Range(0,1)]
-    //public float persistance;
-    //public float lacunarity;
-    //public int seed;
     public Vector2 offset;
     
 
     public void generateMap()
     {
-        float[,] noiseMap = PerlinNoise.GenerateNoiseMap(mapWidth, mapHeight, noiseScale); //seed, noiseScale, octaves, persistance, lacunarity, offset);
+        float[,] noiseMap = PerlinNoise.GenerateNoiseMap(mapWidth, mapHeight, noiseScale); 
         Color[] colourmap = new Color[mapWidth * mapHeight];
         for (int y = 0; y < mapHeight; y++)
         {
@@ -66,15 +62,6 @@ public class MapGenerator : MonoBehaviour {
         {
             mapHeight = 1;
         }
-        /*
-        if (lacunarity < 1) 
-        {
-            lacunarity = 1;
-        }
-        if (octaves < 0)
-        {
-            octaves = 0;
-        }*/
     }
 }
 

@@ -7,14 +7,8 @@ public class MapGeneratorEditor : Editor {
     public override void OnInspectorGUI()
     {
         MapGenerator mapgen = (MapGenerator)target;
+        DrawDefaultInspector();
 
-        if (DrawDefaultInspector())
-        {
-            if (mapgen.autoUpdate)
-            {
-                //mapgen.generateMap();
-            }
-        }
         if (GUILayout.Button("Generate!"))
         {
             mapgen.generateMap();
