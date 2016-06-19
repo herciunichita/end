@@ -1,9 +1,0 @@
-I. Specificații funcționale
-	Aplicația reprezintă un joc 3D definit, în mare, de două aspecte:
-		-Un spațiu generat aleatoriu;
-		-O entitate cu un caracter negativ de care utilizatorul trebuie să se ferească.
-	Astfel, utilizatorul va prelua controlul unui personaj fără un nume, fără o poveste, prin ochii căruia va percepe universul jocului, într-un spațiu mereu necunoscut (la începerea fiecărui joc va fi generată o hartă aleatorie).
-	Pus în această situație, utilizatorul ar putea să nu intuiască în primele momente de joc scopul acestuia, dar totul se clarifică în momentul în care entitatea începe să se apropie de personaj. Utilizatorul va înțelege că este cazul să
-evite această entitate datorită sunetelor de frecvență joasă emise de aceasta (există studii care demonstrează faptul că reacția majorității mamiferelor la sunete joase este una de frică, deoarece doar ceva imens/periculos le-ar putea produce * de completat).
-Pentru a adăuga mai multă tensiune la începutul jocului, personajul se va afla inițial în întuneric, având la dispoziție doar o lanternă ineficientă. Scopul final al jocului ar fi supraviețuirea până dimineața (momentul în care se face într-un sfârșit lumină), moment 
-în care entitatea negativă ar dispărea în mod miraculos.

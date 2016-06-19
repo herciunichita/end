@@ -6,6 +6,7 @@ public class BasicFollowerAI : MonoBehaviour {
     public Transform follower;
     public float speed = 7;
     public float hover = 0.7f;
+    public int chanceToTeleport = 1000;
     private float actualspeed;
     private bool lost;
 
@@ -23,13 +24,13 @@ public class BasicFollowerAI : MonoBehaviour {
             transform.Translate(Vector3.forward * actualspeed * Time.deltaTime);
             transform.Translate(Vector3.up * hover * Time.deltaTime);
         }
-        else if (Vector3.Distance(follower.position, target.position) > 20)
+        else if (Vector3.Distance(follower.position, target.position) > 30)
         {
             System.Random prng = new System.Random();
             actualspeed = speed;
             transform.LookAt(target);
-            int decision = prng.Next(1, 500);
-            if (decision >= 499)
+            int decision = prng.Next(1, chanceToTeleport);
+            if (decision >= chanceToTeleport - 1)
             {
                 actualspeed = 0f;
                 if ((int)prng.Next(1, 500) % 2 == 0)
@@ -64,8 +65,6 @@ public class BasicFollowerAI : MonoBehaviour {
         {
             GUI.Box(new Rect(10, 10, Screen.width, Screen.height), "You finally came to an END.");
             Time.timeScale = 0;
-            //GetComponent<GUITexture>().color= Color.Lerp(GetComponent<GUITexture>().color, Color.black, 1.5f * Time.deltaTime);
-            //GUI.color = Color.black;
         }
     }
 }

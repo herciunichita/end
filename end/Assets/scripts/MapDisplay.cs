@@ -8,14 +8,6 @@ public class MapDisplay : MonoBehaviour {
     public MeshRenderer meshRenderer;
     public MeshCollider meshCollider;
 
-    public void DrawTexture(Texture2D texture)
-    {
-
-
-        textureRenderer.sharedMaterial.mainTexture = texture;
-        textureRenderer.transform.localScale = new Vector3(texture.width, 1, texture.height);
-
-    }
 
     public void DrawMesh (MeshData meshData, Texture2D texture)
     {
@@ -23,7 +15,6 @@ public class MapDisplay : MonoBehaviour {
         meshRenderer.sharedMaterial.mainTexture = texture;
         meshCollider.sharedMesh = meshFilter.sharedMesh;
         meshCollider.enabled = true;
-        //gameObject.AddComponent<MeshCollider>();
     }
 	
 }
